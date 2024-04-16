@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        /* normal state */
+        .container{
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: beige;
+            border: 2px solid black;
+            /* border-radius: 50%; */
+
+            /* transition: all 2s 1s linear;  */
+
+            transition-property: all;
+            transition-duration: 4s;
+            transition-delay: 1s;
+            transition-timing-function: linear; 
+            /* transition-timing-function: ease; */
+
+            /* transition: width 2s, height 5s; */
+        }
+        /* 2nd state */
+
+        /* Pseudo class */
+        
+        .box{
+            height:200px;
+            width: 200px;
+            margin: 2px;
+            padding: 2px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            transition-property: all;
+            transition-duration: 4s;
+            transition-delay: 1s;
+            transition-timing-function: linear;
+         }
+        #box1{
+            background-color: aqua;
+            /* order: 1; */
+            /* flex-shrink: 4; */
+            /* flex-grow: 5; */
+            /* align-self: center; */
+         }
+         #box2{
+            background-color: blue;
+            /* flex-grow: 1; */
+         }
+         #box3{
+            background-color: rgb(255, 89, 0);
+            /* flex-grow: 1; */
+         }
+         #box4{
+            background-color: brown;
+            /* order: -1; */
+            /* flex-grow: 1; */
+            /* flex-basis: 400px; */
+         }
+        .container:hover{
+            /* width: 1000px; */
+            background-color: red;
+            /* height: 500px; */
+            border-radius: 50%;
+        }
+        .box:hover{
+            /* width: 1000px; */
+            background-color: yellowgreen;
+            /* height: 500px; */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+</body>
+</html>

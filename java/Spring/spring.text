@@ -1,0 +1,271 @@
+
+=>content:
+1.spring core
+2.spring data integration
+3.spring web
+4.spring other important modules
+
+=>Prerequistite:
+1.Core java-oops,class,constructor,method overloading/overriding
+2.JDBC
+3.Hibernate framework
+4.Servlet and JSP
+5.Important web and database related terms
+
+=>what is spring framework ?
+It is a dependency injection framework to make java application loosely coupled
+It provides inversion of control- spring dynamically during runtime create object of one class and inject that object to another class
+It makes the easy development of JavaEE application
+
+=>Dependency Injection:
+Dependency means when one class depends on other class for the process of work.
+Use of NEW keyword makes tightly coupled software application so we ignore use of new keyword due to spring
+It is a design pattern 
+
+=>Spring and J2EE :
+->UI Layer(strut/JSF, Spring MVC) - product controller
+->Business/Services Layer(Security, Transaction Management) - product service
+->Data Access Layer(Spring JDBC, Spring ORM) - productdao
+-> DB
+
+=>Spring Modules :
+->Spring core - core, beans, context, [spEL(spring expression language)-it manipulate object graph during runtime]
+->AOP(allows to define interception and point cuts to cleanly decoupled codes), Aspect, Instrumentation, Messaging
+->Data Access/Integration - JDBC, ORM, JMS(Java messaging services), OXM(Object Xml Mapping)
+->Web - web, Servlet, Portlet, WebSocket
+->Test - Unit and Integration Testing, provides Junit and TestNG
+
+=>What is Spring IOC Container :
+It is predefine program which is responsible for object creation, holding of object in memory and inject them in other object as required. It manages the lifecycle of object.
+a)beans
+b)Config file
+
+=>ApplicationContext :
+It is a extension of beanfactory. It represents IOC container.
+It is an interface
+
+=>Implementation of ApplicationContext  : 
+ClasspathXMLApplicationContext - It search xml configuration from java class path
+AnnotatioConfigApplicationContext - It search those beans where annotations are used
+FileSystemXMLApplicationContext - It search file configuration from file system.
+
+=>Dependency Injection is done in two ways :
+a)using setter injection or property injection
+b)using constructor injection
+
+Configuration file or XML file:
+Where we declare beans and its dependency
+
+=>Data Types(Dependencies) :
+1. Primitive Data Types - byte, short, char, int, float, double, long, boolean
+2. Collection Type - List, Set, Map and Properties
+3. Reference Type or user defined - Other class object
+
+=>BEANS-> beans are the java class which contains Properties and methods
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+1-Create Maven Project
+2-Adding dependencies->spring core, spring ApplicationContext
+3-creating beans-java pojo
+4-creating configuration file=>config.xml
+5-setter injection
+6-main class : which can pull the object and the use
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+software:
+1-Eclipse/Netbeans/IntelliJ
+2-TomcatServer
+3-Mysql for database
+4-Sqlyog/ workbench/ phpmyadmin for sql gui
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+=>SETTER Injection
+
+1)For Primitve Types : 
+<!-- 
+	<bean class="com.springcore.Student" name="student2">
+		<property name="studentid" value="2"/>
+		<property name="studentName" value="Mia Khalifa"/>
+		<property nme="studentAddress" value="Gurgaon"/>	
+	</bean>
+-->	
+or
+<!-- Using P schema-->
+	<bean class="com.springcore.Student" name="student1" p:studentid="1" 
+		p:studentName="Johny Sins" p:studentAddress="New Delhi"/>
+	<bean class="com.springcore.Student" name="student2" p:studentid="2" 
+		p:studentName="Shasha Grey" p:studentAddress="Gurgaon"/>
+
+2)For Collection Types :
+a)List : 
+<bean>
+    <property name="">
+        <list>
+            <value>10</value>
+            <value>20</value>
+            <value>30</value>
+            <value>40</value>
+            <null/>
+        </list>
+    </property>
+</bean>   
+
+b)Set : 
+<bean>
+    <property name="">
+        <set>
+            <value>10</value>
+            <value>20</value>
+            <value>30</value>
+            <value>40</value>
+        </set>
+    </property>
+</bean> 
+
+c)Map :
+<bean>
+    <property name="">
+        <map>
+            <entry key="java" value="1.1"/>
+            <entry key="python" value="1.5"/>
+        </map>
+    </property>
+</bean> 
+
+d)Properties : 
+<bean>
+    <property name="">
+        <props>
+            <prop key="name">Nikhil</prop>
+            <prop key="address">Delhi</prop>
+        </props>
+    </property>
+</bean> 
+
+3)For Reference Types :
+<bean>
+    <property name="">
+        <ref bean="">
+    </property>
+</bean>
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+CONSTRUCTOR INJECTION
+    spring supports creating objects using parametrized
+    <constructor-args>
+        <value>b</value>
+    </constructor>
+
+    <constructor-args>
+        <ref bean="">
+    </constructor>
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+constructor Ambiguity : 
+By default it takes string
+String constructor calls first if not it look for from top constructor
+But with the help of "type" we can resolve Ambiguity.
+we can change the order by using "index".
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Spring Bean Life Cycle :
+->public void init() - initialization, code loading, config, connecting db, webservice etc.
+->public void destroy() - clean up code.
+
+configure technique : 
+a)xml
+b)spring interface
+c)annotations
+
+Using Interfaces : 
+a)InitialisingBean
+b)DisposableBean
+
+using annotations : 
+a)PostConstruct
+b)PreDestroy
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Autowiring : feature of spring framework in which spring container inject the dependencies automatically
+             It can't be used to inject primitive and string values. It works with Reference only.
+a)xml : autowiring modes
+        1. no(bydefault)
+        2. byName
+        3. byType
+        4. constructor
+        5. autodetect(it is deprecated since spring 3.
+
+b)annotations: @Autowired
+@Qualifier with @Autowired - specifies the refernce of bean if there contains more than one bean
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+standalone collections - util schema
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Stereotype Annotations - without using bean tag @commponent create object during runtime.
+@Component
+class student{
+    ...
+    ...
+    ...
+}
+<context:component-scan base-package=" "/>
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+collections with @value
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Spring  Bean Scope :
+a)singleton - when we have two or more objects with same hashcode.
+b)prototype - With more than one objects but with different hashcodes.
+                <bean class="" name="" scope="";
+                @Component
+                @Scope("")
+                class student{
+                    ...
+                    ...
+                }
+c)request
+d)session
+e)globalsession
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+SPEL: Spring Expression Language
+supports parsing and executing expressions with the help of @Value annotations
+Expressions                 @Value("#{3+4}") all type of expressions supported
+classes, variables,methods,constructor,objects, symbols, char, numeric,operators,keywords,special symbols 
+which return a value
+
+exp: @Value("#{11+22}")
+exp: @Value("#{8>6 ? 88 : 55}")
+Static methods, object methods, variables
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+How to invoke static method and variable
+T(class).metod(param)
+T(class).variable
+
+How to create objects
+new Object(value)
+exp : @Value("#{new java.lang.String('Nikhil')}")
+
+Boolean Type spEL
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Removing complete xml for spring configuration
+@Configuration @ComponentScan @Bean
+

@@ -1,0 +1,10 @@
+
+React is a JavaScript library for building user interfaces.
+React is used to build single-page applications.
+React allows us to create reusable UI components.
+
+1. official tool is CRA(create react app)
+2. Vite is a modern tool to create React project
+3. Vite purchase quick and small bundle size
+4. Vite: use npm run dev to launch dev server
+5. use npm start for CRA.

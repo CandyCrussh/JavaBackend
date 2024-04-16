@@ -1,0 +1,35 @@
+
+
+>Introduction to DotNet Framework
+
+dotnet framework components: 1. CLR(Commmon language Runtime) 2. FCL(Framework class library)
+
+CLR:
+1. CLI(common language infrastructure) 2. GC(Garbage Collector) 3. JIT(Just in time compiler):converts intermediate code to native or machine code
+
+CLI:
+1. CLS(common language specification) 2.CTS(common type system)
+
+.NET is a S.W framework that includes everything that requires for developing application like web, desktop, mobile & IOT. It comes with single class library so weather you write code in VB,C# OR J# is doesn't matter.
+
+>Features of .NET
+1. Platform Neutral or Platform independent
+2. It is a layer between OS and Prgramming language
+3. It supports many programming language . such as C#, J#, F# and VB.
+4. It provides a common set of class libraries which can be accessed from any programming language.
+
+CLR Provides these Features:
+:loading and execution of .net code
+:memory isolation and management application
+:verification of type safety
+:compilation of intermediate language (MSIL code) into native execuatble code.
+:automatic garbage Collector
+:security
+:interoperabilty
+:managing execution and occurence of error and
+:provides supports for debugging
+
+In .NET , the code is compiled twice
+1. In 1st high level code is compiled by the respective language compiler and the language compiler genrates intermediatecode which is also known as MSIL
+2. MSIL is cinverted into Native Code using CLR
+Always 1st compilation is slow and 2nd compilation is fast  

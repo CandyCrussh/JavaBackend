@@ -1,0 +1,4 @@
+
+
+Spring MVC : spring MVC is sub framework of spring framework which is used to build web application.
+             It is build on the top of servlet api.-

@@ -1,0 +1,38 @@
+
+=>---------------------------------------------------------------------------------------------------------
+=>---------------------------------------------------------------------------------------------------------
+Spring JDBC(Java Database Connectivity) - It is a powerful mechanism to connect to the database and execute SQL queries.
+
+JDBC is API to perform operations with database.
+
+Problems of Normal JDBC:
+->we need to write a lot of code.
+->Exception Handling Problem:checked Exception
+  SQLException
+->repeating of all these codes from one to another database logic is a time consuming task.
+
+Spring JDBC provides a class jdbcTemplate which has all the important methods to perform operation with database.
+DriverManagerDataSource:
+    driverClassName=?
+    url = ?
+    username = ?
+    password = ?
+
+jdbcTemplate methods:
+    update() -> insert, update, delete...
+    execute() -> select queries.
+
+# How to create spring database:
+  -> create database springjdbc
+  -> use springjdbc
+# How to create Table:
+  -> create table student(no. of columns) exp: create table student(id int primary key , name varchar(100)    not  null, city varchar(200) );
+# inserting data/rows into columns:
+  -> insert into student(id, name, city) values(1, 'Nikhil', "Delhi");
+# how to see table:
+  -> show tables
+# how to see rows/data:
+  -> select * from student;
+# To see columns : 
+  ->desc student;
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpaca Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            padding: 30px;
+            background-color: rgba(240, 248, 255, 0.651);
+            display: flex;
+            flex-direction: column;
+            /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+            /* background-image: linear-gradient(to right, #8360c3, #2ebf91); */
+            background-image: linear-gradient(to right, #DECBA4, #3E5151);
+            /* justify-content: center; */
+            /* align-items: center; */
+            gap: 20px;
+        }
+        .leftbox img{
+            height: 60vh;
+            width: auto;
+        }
+        .box2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .rightbox{
+            width: 45vw;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            /* background-color: aqua; */
+            justify-content: center;
+            gap: 20px;
+        }
+        .box3{            
+            display: flex;
+            gap: 10px;
+            /* background-color: aquamarine; */
+            width: 46vw;
+            height: 45vh;
+            justify-content: space-between;  
+            align-items: center;
+        }
+        .window1{
+            /* margin: 25px; */
+            height: 80%;
+            width: 40%;
+            border: 2px solid black;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: black;            
+            box-shadow: 2px 5px 5px black;
+            border-radius: 10px;
+        }
+        .window2{
+            margin: 25px;
+            height: 80%;
+            width: 40%;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: end;
+
+            background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: black;            
+            box-shadow: 2px 5px 5px black;
+            border-radius: 10px;
+        }
+        .upper{
+            /* display: block; */
+            /* flex-direction:row; */
+            height: 45vh;
+            gap: 30px;
+            /* background-color: aquamarine; */
+        }
+        .lower{
+            /* background-color: bisque; */
+            height: 45vh;
+            gap: 30px;
+        }
+        button{
+            /* color: aqua; */
+            /* background: none; */
+            padding: 10px 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin: 5px;
+            /* border: 1.5px solid aqua; */
+            border-radius: 20px;
+
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px #eeeeee85;
+            /* border-radius: 10px; */
+            
+        }
+          
+        button:hover{
+            /* color: white;
+            background-color: rgb(0, 179, 255); */
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+                 
+        .windows1{
+            background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .window1:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+        .window2:hover{
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+        p{
+            font-weight:bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>ALPACA GENERATOR</h1>
+        </div>
+        <div class="box2">
+            <div class="leftbox">
+                <img src="bg.jfif" alt="">
+            </div>
+            <div class="rightbox">
+                <div class="upper">
+                    <p>ACCESSORIZE THE ALPACA</p>
+                    <button>hair</button>
+                    <button>Ears</button>
+                    <button>Eyes</button>
+                    <button>Mouth</button>
+                    <button>Neck</button>
+                    <button>Leg</button>
+                    <button>Accessories</button>
+                    <button>Background</button>
+                </div>
+                <div class="lower">
+                    <p>Style</p>
+                    <button>Default</button>
+                    <button>Curls</button>
+                    <button>Short</button>
+                    <button>Bang</button>
+                    <button>Elegant</button>
+                    <button>Quiff</button>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="window1">
+                <p>Random</p>
+            </div>
+            <div class="window2">
+                <p>Download</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

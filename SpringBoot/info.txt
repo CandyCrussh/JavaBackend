@@ -1,0 +1,179 @@
+
+
+Spring Boot is module of spring from which we speed up the development.
+Spring boot makes it easy to create standalone, production-grade spring based applications that you can "just run".
+It provides an easier and faster way to setup, configure, and run both simple and web-based applications.
+spring framework + embedded servers - configurations = SpringBoot
+Convention over configuration software design style.
+It decreases the effort of the developer.
+Opinionated Default - Automatically configure.
+Scans the class path and find the dependency it will Automatically configure the things.
+
+=>Advantages
+.It creates stand-alone Spring applications that can be started using -jar.
+.Embeded Tomcat, Jetty or Undertow directly (no need to deploy war files)
+.Provides Opinionated 'Starter' dependencies to simplify your build configuration
+.Automatically configure springs and 3rd party libraries whenever possible.
+.Provide production-ready features such as metrics, health checks, and externalized configuration
+.Absolutely no code generation and no requirment for xml configuration.
+
+Starter POM:
+Spring-boot-starter-web
+Spring-boot-starter-data-jpa 
+
+when we add starter jars then it pull all the jars.
+jars contain - META-INF/spring.factories contains all automatic configurations.
+what should be enabled or disabled based on some conditions.
+
+Hibernate is the implementation of JPA.
+JPA (java persistence API): It is an ORM(object relational mapping) tool. It extracts row from tables and convert that in object and save object in database.
+It provides two interfaces : a)EntityManagerFactory b)EntityManager-create,update,read, delete
+
+           CRUDRepository (interface provided by spring) 
+     					|
+user(class)    ^		JPARepository(provides extra functionalty to crud)(interface provided by spring)
+	       |			|
+	   userRepository(interace created by user)
+
+
+=>API: It is a set of rules that allows programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.
+Rest API(Representational State Transfer) - A set of constraints to be used for creating web services.
+	Client - server
+	Stateless communication
+	Cacheable
+	Layered
+The important methods of HTTP are:
+	GET: It reads the resource
+	PUT: It updates an existing resource
+	POST: It creates new resource
+	DELETE: It deletes the resource
+
+	Status code-
+	404: resource not found
+	200: success
+	201: CREATED
+	401: Unauthorized
+	500: Server Error
+
+=>Spring Boot DevTools: The aim of the module is to try and improve the development time while working with the spring boot application. Spring boot devtools
+			picks up the changes and restart the application.
+			Features- 1.Property Defaults 2.Automatic restart 3.Live Reload 4.Remote Applications
+https://identity.getpostman.com/client-auth/confirm?auth_challenge=28cd7db6975736764aa021ad4ebc48d893f341076e073d6b8a7b275ab2b7e8c3&auth_device=vscode_postman&auth_device_version=0.18.0
+PMAK-65e97440ac612500016457fe-6ffd6531b739d97cd170e6df4109a925
+
+=>by default from crud CrudRepository
+	findAllbyId, finfById, findAll
+=>Derived Query methods/custom finder methods
+	data by name
+	data by name and password
+	data name starting with prefix
+	data by name like 'keyword'
+
+select * from user where name = 'something'
+
+public List<User> findByName(String Name)
+findByNameStartingWith(String prefix)
+findByNameEndingWith(String suffix)
+findByNameContaining(String words)
+findByNameLike(String likePattern)
+findByAgeLessThan(int age)
+findByAgeIn(Collection<Integer> ages)
+
+@Query->to fire query
+	JPQL
+	native query
+	
+	//JPQL
+	@Query("select u FROM UserRepo u")
+	public List<UserRepo> getAllUser();
+	
+	@Query("select u FROM UserRepo u WHERE u.name =:n")
+	public List<UserRepo> getUserByName(@Param("n") String name);
+	
+	@Query("select u FROM UserRepo u WHERE u.name =:n and u.city =:c")
+	public List<UserRepo> getUserByName(@Param("n") String name, @Param("c")String city);
+	
+	//Native Query
+	@Query(value="select * from user_repo", nativeQuery = true)
+	public List<UserRepo> getUsers();
+
+=>Microservices:
+										    (SpringBoot Project)
+    #Monolithic architecture:   client <-> quiz/question/result/report <-> database
+
+    Disadvantages of Monolithic :
+		a) Tight coupling of services - if one service is down other services will get affected. if one service is planned to redeploy other get affected.
+		b) Scaling problem.
+		c) Technology locking
+		d) Codebase Become complex as project scale.
+
+	#Microservices architecture: Software design pattern where software is composed of small independent services that communicate over well-defined APIs.
+
+		To interact with one service to other servives together using http
+
+				(api.com)	->		quiz service (java, m1.com:8081) (as a client )- > database mysql
+	Client ->  API Gateway	->		question service (python, m1.com: 8082) (as a client ) - > database postgres
+							->		result service (c++, xyz.com: 8083) (as a client )- > mongodb
+							->		report service (javascript, abc.com: 8082) (as a client ) - > oracle
+	Regustry Service(as a server)						
+									config server(centralised configuration server)
+									Registry Service(manages the services , instance and registry, load balancing) (Netflix eureka server and client)
+									For Tracing : Sleuth and Zipki
+	API Gateway : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

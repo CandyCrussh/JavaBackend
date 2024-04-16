@@ -1,0 +1,13 @@
+=>Data: It is a collection of distinct small unit of information. Raw facts and figure.
+=>Database: It is a organised collection of data, so that it can be easily accessed and managed.
+Mysql: open source RDBMS software by oracle.
+client - server
+
+->mysql -u root -p
+->mysql -u root --port {3306} -p  #if port is different
+
+->show databases;
+->create database [databasename];  #create database
+->drop database [databasename];    #remove database
+->use [databasename];              #enter in a databse
+->show tables;                     #to show table in a database

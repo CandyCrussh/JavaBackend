@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: beige;
+            border: 5px solid black;
+        }
+        .box{
+            width: 350px;
+            height: 80px;
+            background-color: blue;
+            border: 1px solid blue;
+            border-radius: 10px;
+            margin: 10px;
+            position: relative;
+            animation: 5s linear 1s  infinite alternate none running rightMovement;
+            /* animation: rightMovement 5s linear 1s infinite alternate null; */
+            /* animation-name: rightMovement;
+            animation-duration: 5s;
+            animation-iteration-count: infinite; */
+            /* animation-iteration-count: 1; */
+            /* animation-fill-mode: backwards; */
+            /* animation-direction: alternate; */
+            /* animation-direction: reverse; */
+            /* animation-direction: alternate-reverse; */
+            /* animation-delay: 2s; */
+            /* animation-timing-function: linear; */
+            /* animation-timing-function: cubic-bezier(0.1,0.7,1.0,0.1); */
+            /* animation-timing-function: cubic-bezier(1,-0.4,1,1); */
+        }
+        @keyframes rightMovement{
+            from{
+                top: 0;
+                left: 0;
+            }
+            to{
+                top: 0;
+                left: 1200px;
+            }
+        }
+        .box2{
+            width: 350px;
+            height: 80px;
+            background-color: blue;
+            border: 1px solid blue;
+            border-radius: 10px;
+            margin: 10px;
+            position: relative;
+            animation: 5s linear 1s  infinite alternate none running leftMovement;
+
+        }
+        @keyframes leftMovement{
+            from{
+                top: 250px;
+                left: 950px;
+            }
+            to{
+                top: 250px;
+                left: 0px;
+            }
+        }
+        #circle{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 3px solid yellow;
+            border-radius: 50px;
+            top: 30%;
+            left: 40%;
+            margin: 10px;
+            position: relative;
+            animation: 5s ease-in-out 0s  infinite alternate-reverse none running circleMovement;
+
+        }
+        @keyframes circleMovement{
+            0%{
+                top: 1%;
+                left: 5%;
+            }
+            30%{
+                top: 5%;
+                left: 90%;
+            }
+            60%{
+                top: 60%;
+                left: 10%;
+            }
+            100%{
+                top: 65%;
+                left: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div id="circle"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

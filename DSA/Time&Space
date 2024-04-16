@@ -1,0 +1,9 @@
+
+
+->Time Complexity : Time taken by a algorithm as a function by the length of the input.
+                  It gives you the upper bound of algorithm
+
+O(n) : n/4, 5n+3logn etc
+O(n2) : n2/4, 5n2+3logn etc
+
+->Recursion : when a function calls itslef inside its own function.
